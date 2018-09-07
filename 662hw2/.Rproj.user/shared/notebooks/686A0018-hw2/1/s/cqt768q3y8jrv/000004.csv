@@ -1,0 +1,4 @@
+"0","nhyper=filter(pgedat,pgedat$hypercalcemia==0)"
+"0","hyper=filter(pgedat,pgedat$hypercalcemia==1)"
+"0","pged2=rbind(nhyper,hyper)"
+"0","ggplot(data=pged2,aes(x=ipge))+geom_histogram(data=nhyper,aes(fill=""hypercalcemia=0""),alpha=.5,binwidth=50)+geom_histogram(data=hyper,aes(fill=""hypercalcemia=1""),alpha=.5,binwidth=50)"

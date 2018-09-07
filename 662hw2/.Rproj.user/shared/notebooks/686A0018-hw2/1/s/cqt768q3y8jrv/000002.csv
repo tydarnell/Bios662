@@ -1,0 +1,14 @@
+"0"," pgedat=read_table2(""HW2_PGE.txt"",col_names=c(""patient"", ""ipge"", ""ca"", ""hypercalcemia""))"
+"2","Parsed with column specification:
+cols(
+  patient = col_integer(),
+  ipge = col_integer(),
+  ca = col_double(),
+  hypercalcemia = col_integer()
+)
+"
+"2","2 parsing failures.
+row [38;5;246m# A tibble: 2 x 5[39m col     row col   expected  actual    file          expected   [3m[38;5;246m<int>[39m[23m [3m[38;5;246m<chr>[39m[23m [3m[38;5;246m<chr>[39m[23m     [3m[38;5;246m<chr>[39m[23m     [3m[38;5;246m<chr>[39m[23m         actual [38;5;250m1[39m     3 [31mNA[39m    4 columns 5 columns 'HW2_PGE.txt' file [38;5;250m2[39m    13 [31mNA[39m    4 columns 5 columns 'HW2_PGE.txt'
+"
+"0","pgedat$hypercalcemia=as.factor(pgedat$hypercalcemia)"
+"0","pgedat%>%group_by(hypercalcemia) %>% summarise(mean(ipge),sd(ipge))"

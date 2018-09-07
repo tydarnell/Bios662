@@ -1,0 +1,9 @@
+"0","library(tidyverse)"
+"0","sbpdat=read_table(""HW2_SBP.txt"",col_names = c(""mi"",""sbp""))"
+"2","Parsed with column specification:
+cols(
+  mi = col_integer(),
+  sbp = col_integer()
+)
+"
+"0","sbpdat$mi <- as.factor(sbpdat$mi)"

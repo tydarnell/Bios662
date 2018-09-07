@@ -1,0 +1,29 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1536330717427.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "5F3DAB43",
+    "lastKnownWriteTime" : 3631138694505199461,
+    "last_content_update" : 1536330717427,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "E6F59FEA",
+        "caption" : "pged2",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=pged2&cache_key=E6F59FEA",
+        "displayedObservations" : "21",
+        "environment" : "",
+        "object" : "pged2",
+        "preview" : "0",
+        "totalObservations" : "21",
+        "variables" : "4"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}
