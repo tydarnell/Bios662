@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1537274133612.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1222874585",
+    "id" : "FE43C160",
+    "lastKnownWriteTime" : 1537274216,
+    "last_content_update" : 1537274216364,
+    "path" : "~/Bios662/hw3/hw3.Rmd",
+    "project_path" : "hw3.Rmd",
+    "properties" : {
+        "cursorPosition" : "4,21",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}
