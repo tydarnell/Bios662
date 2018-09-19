@@ -1,0 +1,2 @@
+"0","p.ca<- pgedat$ca"
+"0","ci1 <- t.test(p.ca)$conf.int"
