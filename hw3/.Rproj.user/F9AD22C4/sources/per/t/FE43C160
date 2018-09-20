@@ -5,16 +5,16 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "2667021203",
+    "hash" : "3735194773",
     "id" : "FE43C160",
-    "lastKnownWriteTime" : 1537373159,
-    "last_content_update" : 1537373159114,
+    "lastKnownWriteTime" : 1537445552,
+    "last_content_update" : 1537445552344,
     "path" : "~/Bios662/hw3/hw3.Rmd",
     "project_path" : "hw3.Rmd",
     "properties" : {
-        "cursorPosition" : "119,12",
-        "last_setup_crc32" : "23C1028B95edb3a0",
-        "scrollLine" : "110"
+        "cursorPosition" : "119,38",
+        "last_setup_crc32" : "",
+        "scrollLine" : "106"
     },
     "relative_order" : 1,
     "source_on_save" : false,

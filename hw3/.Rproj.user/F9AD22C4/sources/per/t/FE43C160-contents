@@ -5,14 +5,12 @@ date: "September 18, 2018"
 output: html_document
 ---
 ```{r include=FALSE}
-knitr::opts_chunk$set(echo = F,message=F,comment="",warning=F)
+knitr::opts_chunk$set(message=F,comment="",warning=F)
 ```
 
-```{r setup, include=FALSE}
+```{r setup, include=F}
 library(tidyverse)
 library(knitr)
-library(skimr)
-library(moderndive)
 pgedat=read_table2("HW2_PGE.txt",col_names=c("patient", "ipge", "ca", "hypercalcemia"))
 pgedat$hypercalcemia=as.factor(pgedat$hypercalcemia)
 ```
@@ -119,6 +117,14 @@ median(y)
 
 (10.1,12.1) 
 
+```{r, echo=FALSE, fig.cap="SAS Output", out.width = '40%'}
+knitr::include_graphics("sasoutputhw3.png")
+```
+
+```{r, echo=FALSE, fig.cap="SAS Code", out.width = '40%'}
+knitr::include_graphics("sascodehw3.png")
+```
+
 
 #Problem 2
 ##a)
@@ -129,17 +135,11 @@ $\bar{Y} \sim N(1,1)$
 
 ##b)
 
-$P[1<\dfrac{\bar{Y}-\mu}{\sigma/\sqrt{n}}\leq 2.85]$
-
-$P[1<\bar{Y}-1\leq 2.85]$
-
-$P[2 < \bar{Y}\leq 3.85]$
-
 ```{r}
- pnorm(3.85)-pnorm(2.85)
+ pnorm(2.85,1,1)-pnorm(1,1,1)
 ```
 
 ##c)
 
-$W \sim N(4,1)$
+$W \sim N(4,16)$
 
