@@ -288,7 +288,9 @@ pval2=2*pnorm(-1.3668861,0,1)</code></pre>
 <p><span class="math inline">\(Z=\dfrac{W_1 -E(W_1)}{\sqrt{Var(W_1)}}\)</span></p>
 <p>Z=-1.3668861</p>
 <p>p-value=0.171661</p>
-<p>since 0.171661 &gt;.05 do not reject <span class="math inline">\(H_0\)</span></p>
+<p><span class="math inline">\(C_{.05}\)</span> two-tailed <span class="math inline">\(=\{z:|z|&gt;1.96\}\)</span></p>
+<p>-1.3668861 is not in the critical region.</p>
+<p>since 0.171661 &gt;.05 and our z score is not in the critical region, do not reject <span class="math inline">\(H_0\)</span></p>
 <p>Thus we can’t conclude that the distributions of the Hypertension and Normal samples are different.</p>
 <p>Checking the pvalue using the built in Wilcox test in r we get the same result.</p>
 <pre class="r"><code>wilcox.test(Hyper,Normal,alternative = &quot;two.sided&quot;,exact=F,correct=F)</code></pre>

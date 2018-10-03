@@ -182,7 +182,13 @@ Z=`r z `
 
 p-value=`r pval2`
 
-since `r pval2` >.05 do not reject $H_0$
+
+
+$C_{.05}$ two-tailed $=\{z:|z|>1.96\}$
+
+`r z` is not in the critical region.
+
+since `r pval2` >.05  and our z score is not in the critical region, do not reject $H_0$
 
 Thus we can't conclude that the distributions of the Hypertension and Normal samples are different.
 
