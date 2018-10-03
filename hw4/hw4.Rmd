@@ -8,6 +8,7 @@ output: html_document
 ```{r setup, include=FALSE}
 library(tidyverse)
 library(magrittr)
+library(knitr)
 pku=read_table("HW4_PKU.txt",col_names=c("pair","case","sibling"),skip=1)
 knitr::opts_chunk$set(echo = TRUE)
 ```
@@ -99,8 +100,7 @@ index=0:21
 sorted_differences=sort(differences)
 differences2=c(index,sorted_differences)
 smed=sorted_differences[11]
-prob=tibble(index=index,prob=pbinom(index,21,.5))
-print(prob,n=22)
+(prob=kable(tibble(r=index,prob=pbinom(index,21,.5)),align="l"))
 pval=2*pbinom(6,21,.5)
 ```
 

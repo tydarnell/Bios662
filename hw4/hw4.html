@@ -184,33 +184,105 @@ ci=c(sm-me,sm+me)</code></pre>
 sorted_differences=sort(differences)
 differences2=c(index,sorted_differences)
 smed=sorted_differences[11]
-prob=tibble(index=index,prob=pbinom(index,21,.5))
-print(prob,n=22)</code></pre>
-<pre><code>## # A tibble: 22 x 2
-##    index        prob
-##    &lt;int&gt;       &lt;dbl&gt;
-##  1     0 0.000000477
-##  2     1 0.0000105  
-##  3     2 0.000111   
-##  4     3 0.000745   
-##  5     4 0.00360    
-##  6     5 0.0133     
-##  7     6 0.0392     
-##  8     7 0.0946     
-##  9     8 0.192      
-## 10     9 0.332      
-## 11    10 0.500      
-## 12    11 0.668      
-## 13    12 0.808      
-## 14    13 0.905      
-## 15    14 0.961      
-## 16    15 0.987      
-## 17    16 0.996      
-## 18    17 0.999      
-## 19    18 1.000      
-## 20    19 1.000      
-## 21    20 1.000      
-## 22    21 1</code></pre>
+(prob=kable(tibble(r=index,prob=pbinom(index,21,.5)),align=&quot;l&quot;))</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="left">r</th>
+<th align="left">prob</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">0</td>
+<td align="left">0.0000005</td>
+</tr>
+<tr class="even">
+<td align="left">1</td>
+<td align="left">0.0000105</td>
+</tr>
+<tr class="odd">
+<td align="left">2</td>
+<td align="left">0.0001106</td>
+</tr>
+<tr class="even">
+<td align="left">3</td>
+<td align="left">0.0007448</td>
+</tr>
+<tr class="odd">
+<td align="left">4</td>
+<td align="left">0.0035987</td>
+</tr>
+<tr class="even">
+<td align="left">5</td>
+<td align="left">0.0133018</td>
+</tr>
+<tr class="odd">
+<td align="left">6</td>
+<td align="left">0.0391769</td>
+</tr>
+<tr class="even">
+<td align="left">7</td>
+<td align="left">0.0946236</td>
+</tr>
+<tr class="odd">
+<td align="left">8</td>
+<td align="left">0.1916552</td>
+</tr>
+<tr class="even">
+<td align="left">9</td>
+<td align="left">0.3318119</td>
+</tr>
+<tr class="odd">
+<td align="left">10</td>
+<td align="left">0.5000000</td>
+</tr>
+<tr class="even">
+<td align="left">11</td>
+<td align="left">0.6681881</td>
+</tr>
+<tr class="odd">
+<td align="left">12</td>
+<td align="left">0.8083448</td>
+</tr>
+<tr class="even">
+<td align="left">13</td>
+<td align="left">0.9053764</td>
+</tr>
+<tr class="odd">
+<td align="left">14</td>
+<td align="left">0.9608231</td>
+</tr>
+<tr class="even">
+<td align="left">15</td>
+<td align="left">0.9866982</td>
+</tr>
+<tr class="odd">
+<td align="left">16</td>
+<td align="left">0.9964013</td>
+</tr>
+<tr class="even">
+<td align="left">17</td>
+<td align="left">0.9992552</td>
+</tr>
+<tr class="odd">
+<td align="left">18</td>
+<td align="left">0.9998894</td>
+</tr>
+<tr class="even">
+<td align="left">19</td>
+<td align="left">0.9999895</td>
+</tr>
+<tr class="odd">
+<td align="left">20</td>
+<td align="left">0.9999995</td>
+</tr>
+<tr class="even">
+<td align="left">21</td>
+<td align="left">1.0000000</td>
+</tr>
+</tbody>
+</table>
 <pre class="r"><code>pval=2*pbinom(6,21,.5)</code></pre>
 <p>Sample median = <span class="math inline">\(\hat{\zeta_{.5diff}}=\)</span>-7</p>
 <p><span class="math inline">\(\zeta_{.5diff}\)</span>=population median of the differences of <code>case</code> and <code>control</code> IQ.</p>
