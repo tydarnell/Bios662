@@ -1,0 +1,4 @@
+"0","hyper.ranksum=dat.rank%>%filter(group==""Hyper"")%>%summarise(ranksum=sum(rank))"
+"0","normal.ranksum=dat.rank%>%filter(group==""Normal"")%>%summarise(ranksum=sum(rank))"
+"0","varw=(12*15*28)/12-(12*15*18)/(12*27*26)"
+"0","Ew=12*28/2"

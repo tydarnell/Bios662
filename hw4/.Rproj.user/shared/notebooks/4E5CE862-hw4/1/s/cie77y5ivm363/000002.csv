@@ -1,0 +1,4 @@
+"0","Hyper=c(1100,1320,1350,1450,1600,1850,1900,1990,2050,2120,2200,2210,2500,2610,2720)"
+"0","Normal=c(1000,1220,1300,1400,1555,1600,1780,1780,1900,2020,2350,2375)"
+"0","dat <- data.frame(group=c(rep(""Hyper"",each=15),rep(""Normal"",each=12)),avg.na=c(Hyper,Normal))"
+"0","dat.rank=dat%>% arrange(avg.na)%>%mutate(rank=min_rank(avg.na))"
