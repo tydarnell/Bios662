@@ -1,0 +1,2 @@
+"0"," hca1=pgedat%>%filter(hypercalcemia==1)%>%select(ipge)"
+"0","hca0= pgedat%>%filter(hypercalcemia==0)%>%select(ipge)"

@@ -1,0 +1,70 @@
+---
+title: "hw5"
+author: "Ty Darnell"
+date: "October 10, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,warning = F,message=F)
+library(tidyverse)
+library(knitr)
+pgedat=read_table2("HW2_PGE.txt",col_names=c("patient", "ipge", "ca", "hypercalcemia"))
+pgedat$hypercalcemia=as.factor(pgedat$hypercalcemia)
+```
+
+#Problem 1
+
+$F_1$ = group of subjects without hypercalcemia
+
+$F_2$ = group of subjects with hypercalcemia
+
+$F_1(y)$ = distribution of `ipge` for group of subjects without hypercalcemia
+
+$F_2(y)$ = distribution of `ipge` for group of subjects with hypercalcemia
+
+$H_0:F_1(y)=F_2(y)$ for all y
+
+$H_A: F_1(y)\neq F_2(y)$ for at least one y
+
+$D=\max_y|F_{1n}(y)-F_{2m}(y)|$
+
+$F_{1n}(y)$= Emperical Distribution Function for the sample from $F_1$
+
+$F_{2m}(y)$= Emperical Distribution Function for the sample from $F_2$
+
+```{r}
+hca2=pgedat%>%filter(hypercalcemia==1)
+
+hca1= pgedat%>%filter(hypercalcemia==0)
+
+f1=hca1$ipge
+
+f2=hca2$ipge
+
+ ks.test(f1,f2)
+
+```
+
+Using $\alpha = .05$
+
+D=.62727
+
+pvalue =.03242
+
+since $pvalue<.05$ reject $H_0$
+
+We conclude that the distributions of `ipge` may be different for people with and without hypercalcemia.
+
+#Problem 2
+
+```{r}
+fisher.test(matrix(c(21,2,2,8),nrow=2),alternative="greater")
+
+```
+
+$\alpha=.05$
+
+$pvalue=.0001255$
+
+Reject $H_0$ since $pvalue<.05$
