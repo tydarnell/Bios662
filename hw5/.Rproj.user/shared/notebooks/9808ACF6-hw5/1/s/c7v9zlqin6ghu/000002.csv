@@ -1,0 +1,4 @@
+"0","church <- matrix(c(38,240207,89,30514),ncol=2,byrow=TRUE)"
+"0","colnames(church) <- c(""death"",""nodeath"")"
+"0","rownames(church) <- c("">=1"",""<1"")"
+"0","church <- as.table(church)"

@@ -1,0 +1,15 @@
+X<-array(c(7,55,31,269,7,20,18,112,7,33,24,114,40,88,45,172,
+            34,50,24,55,27,55,24,58,30,34,17,17),
+          dim=c(2,2,7),
+          dimnames=list(CupsCoffee=c("GE5","LT5"),MIcase=c("Yes","No"),
+                        Smoking=c("Never","Former","1-14","15-24","25-34","35-44","45+")))
+
+rows <- dim(X)[1]
+cols <- dim(X)[2]
+
+result <- matrix(0, nrow=rows, ncol=cols)
+for (i in seq(rows)) {
+  for (j in seq(cols)) {
+    result[i,j] <- sum(X[i,j,])
+  }
+}

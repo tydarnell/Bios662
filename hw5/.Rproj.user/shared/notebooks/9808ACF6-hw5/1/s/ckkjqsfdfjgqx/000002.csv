@@ -1,0 +1,7 @@
+"0","never=oddsratio.wald(X[,,1])$measure"
+"0","former=oddsratio.wald(X[,,2])$measure"
+"0","s1.14=oddsratio.wald(X[,,3])$measure"
+"0","s15.24=oddsratio.wald(X[,,4])$measure"
+"0","s25.34=oddsratio.wald(X[,,5])$measure"
+"0","s35.44=oddsratio.wald(X[,,6])$measure"
+"0","S45=oddsratio.wald(X[,,7])$measure"

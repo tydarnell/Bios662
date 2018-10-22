@@ -163,21 +163,201 @@ f2=hca2$ipge
 </div>
 <div id="problem-2" class="section level1">
 <h1>Problem 2</h1>
-<pre class="r"><code>fisher.test(matrix(c(21,2,2,8),nrow=2),alternative=&quot;greater&quot;)</code></pre>
+<pre class="r"><code>fisher.test(matrix(c(21,2,2,8),nrow=2),alternative=&quot;two.sided&quot;)</code></pre>
 <pre><code>## 
 ##  Fisher's Exact Test for Count Data
 ## 
 ## data:  matrix(c(21, 2, 2, 8), nrow = 2)
 ## p-value = 0.0001255
-## alternative hypothesis: true odds ratio is greater than 1
+## alternative hypothesis: true odds ratio is not equal to 1
 ## 95 percent confidence interval:
-##  4.927592      Inf
+##    3.819676 571.245711
 ## sample estimates:
 ## odds ratio 
 ##   34.05494</code></pre>
+<p><span class="math inline">\(\pi_1\)</span>= Proportion of people dead within 5 years who recieve 1-4 courses of chemotherapy</p>
+<p><span class="math inline">\(\pi_2\)</span>= Proportion of people dead within 5 years who recieve 10 or more courses of chemotherapy.</p>
+<p><span class="math inline">\(H_0: \pi_1=\pi_2\)</span></p>
+<p><span class="math inline">\(H_A: \pi_1 \neq \pi_2\)</span></p>
 <p><span class="math inline">\(\alpha=.05\)</span></p>
 <p><span class="math inline">\(pvalue=.0001255\)</span></p>
 <p>Reject <span class="math inline">\(H_0\)</span> since <span class="math inline">\(pvalue&lt;.05\)</span></p>
+<p>Conclude there is a statistically significant assiociation in the table.</p>
+</div>
+<div id="problem-3" class="section level1">
+<h1>Problem 3</h1>
+<div id="part-a" class="section level2">
+<h2>Part a</h2>
+<pre class="r"><code>church &lt;- matrix(c(89,30514,38,240207),ncol=2,byrow=TRUE)
+colnames(church) &lt;- c(&quot;D&quot;,&quot;Dbar&quot;)
+rownames(church) &lt;- c(&quot;E&quot;,&quot;Ebar&quot;)
+church &lt;- kable(church)
+church</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">D</th>
+<th align="right">Dbar</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>E</td>
+<td align="right">89</td>
+<td align="right">30514</td>
+</tr>
+<tr class="even">
+<td>Ebar</td>
+<td align="right">38</td>
+<td align="right">240207</td>
+</tr>
+</tbody>
+</table>
+<p>Where <span class="math inline">\(E = church &lt; 1\)</span> per week</p>
+<p><span class="math inline">\(\bar{E}=church \geq 1\)</span> per week</p>
+<p><span class="math inline">\(D=death\)</span></p>
+<p><span class="math inline">\(\bar{D}=no \ death\)</span></p>
+<p><span class="math inline">\(P(Death)=\dfrac{127}{54848}=.0023\)</span></p>
+<p><span class="math inline">\(P(Church Attendance) =\dfrac{24245}{54848}=.4420\)</span></p>
+<p><span class="math inline">\(P(church and death)=\dfrac{38}{54848}=.0007\)</span></p>
+<p><span class="math inline">\(P(no church and death)=\dfrac{89}{54848}=.0016\)</span></p>
+<p><span class="math inline">\(p_1=P(death|&lt;1 church)=\dfrac{P(&lt;1 church and death)}{P(&lt;1 church)}=\dfrac{.0016}{.5580}=.0029\)</span></p>
+<p><span class="math inline">\(p_2=P(death|church)=\dfrac{P(church and death)}{P(church)}=\dfrac{.0007}{.4420}=.0016\)</span></p>
+<p>Relative risk of an arteriosclerotic death in the 3 year follow up period if one usually attends church less than one week compared to once a week or more.</p>
+<pre class="r"><code>rr=round(.0029/.0016,digits=4)</code></pre>
+<p><span class="math inline">\(RR = \dfrac{p_1}{p_2}=\dfrac{.0029}{.0016}=\)</span> 1.8125</p>
+<p>This means that a person who attends church less than once a week is 1.8125 times more likely to have an arteriosclerotic death within the 3 year follow up period than someone who attends church at least once a week.</p>
+</div>
+<div id="part-b" class="section level2">
+<h2>Part b</h2>
+<pre class="r"><code>or=round((.0029/(1-.0029))/(.0016/(1-.0016)),digits = 4)
+a=1.96*sqrt(1/89+1/38+1/30514+1/24207)
+ci=c(or*exp(-a),or*exp(a))</code></pre>
+<p><span class="math inline">\(\hat{OR}=\dfrac{p_1/(1-p_1)}{p_2/(1-p_2)}=\dfrac{.0029/(1-.0029)}{.0016/(1-.0016)}\)</span> = 1.8149</p>
+<p>95% CI for <span class="math inline">\(\hat{OR}\)</span></p>
+<p><span class="math inline">\(z_{\alpha/2}=1.96\)</span></p>
+<p><span class="math inline">\(\hat{OR}*e^{\pm 1.96\sqrt{1/89+1/38+1/30514+1/24207}}=\)</span> (1.240906, 2.6544009)</p>
+</div>
+<div id="part-c" class="section level2">
+<h2>Part c</h2>
+<pre class="r"><code>pe=100*(or-rr)/rr</code></pre>
+<p>Percent error of <span class="math inline">\(\hat{OR}=100(OR-RR)/RR=\)</span> 0.1324138%</p>
+</div>
+</div>
+<div id="problem-4" class="section level1">
+<h1>Problem 4</h1>
+<div id="part-a-1" class="section level2">
+<h2>Part a</h2>
+<pre class="r"><code>X&lt;-array(c(7,55,31,269,7,20,18,112,7,33,24,114,40,88,45,172,
+            34,50,24,55,27,55,24,58,30,34,17,17),
+          dim=c(2,2,7),
+          dimnames=list(CupsCoffee=c(&quot;GE5&quot;,&quot;LT5&quot;),MIcase=c(&quot;Yes&quot;,&quot;No&quot;),Smoking=c(&quot;Never&quot;,&quot;Former&quot;,&quot;1-14&quot;,&quot;15-24&quot;,&quot;25-34&quot;,&quot;35-44&quot;,&quot;45+&quot;)))
+rows &lt;- dim(X)[1]
+cols &lt;- dim(X)[2]
+result &lt;- matrix(0, nrow=rows, ncol=cols)
+for (i in seq(rows)) {
+  for (j in seq(cols)) {
+    result[i,j] &lt;- sum(X[i,j,])
+  }
+}
+rownames(result)=c(&quot;&gt;=5&quot;,&quot;&lt;5&quot;)
+colnames(result)=c(&quot;MI&quot;,&quot;Control&quot;)
+kable(result)</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">MI</th>
+<th align="right">Control</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>&gt;=5</td>
+<td align="right">152</td>
+<td align="right">183</td>
+</tr>
+<tr class="even">
+<td>&lt;5</td>
+<td align="right">335</td>
+<td align="right">797</td>
+</tr>
+</tbody>
+</table>
+<p>Using R to collapse table 6.11 over the smoking categories yields the same results as the table in problem 6.13.</p>
+</div>
+<div id="part-b-1" class="section level2">
+<h2>Part b</h2>
+<pre class="r"><code>p1=round((152/1467)/(335/1467),digits=4)
+p2=round((335/1467)/(1132/1467),digits=4)
+or2=(p1/(1-p1))/(p2/(1-p2))
+b=1.96*sqrt(1/152+1/183+1/335+1/797)
+ci2=c(or2*exp(-b),or2*exp(b))</code></pre>
+<p><span class="math inline">\(E=\geq 5\)</span> cups of coffee per day</p>
+<p><span class="math inline">\(\bar{E}= &lt;5\)</span> cups of coffee per day</p>
+<p><span class="math inline">\(D=MI\)</span></p>
+<p><span class="math inline">\(\bar{D}=Control\)</span></p>
+<p><strong>Odds ratio and 95% CI ignoring smoker status</strong></p>
+<p><span class="math inline">\(p_1=P(MI| \geq 5 cups)=\dfrac{P(\geq 5 cups and MI)}{P(\geq 5 cups)}=\dfrac{152/1467}{335/1467}\)</span>= 0.4537</p>
+<p><span class="math inline">\(p_2=P(MI|&lt;5 cups)=\dfrac{P(&lt;5 cups and MI)}{P(&lt;5 cups)}=\dfrac{335/1467}{1132/1467}\)</span>= 0.2959</p>
+<p><span class="math inline">\(\hat{OR}=\dfrac{p_1/(1-p_1)}{p_2/(1-p_2)}=\)</span> 1.9761821</p>
+<p>95% CI for <span class="math inline">\(\hat{OR}\)</span></p>
+<p><span class="math inline">\(z_{\alpha/2}=1.96\)</span></p>
+<p><span class="math inline">\(\hat{OR}*e^{\pm 1.96\sqrt{1/152+1/183+1/335+1/797}}=\)</span> (1.5388873, 2.5377399)</p>
+<pre class="r"><code>nosmoke=oddsratio.wald(result)$measure
+nosmoke[c(0,2),]</code></pre>
+<pre><code>## estimate    lower    upper 
+## 1.976087 1.538820 2.537606</code></pre>
+<p><strong>Odds ratio and 95% CI taking into account smoker status</strong></p>
+<pre class="r"><code>never=oddsratio.wald(X[,,1])$measure
+former=oddsratio.wald(X[,,2])$measure
+s1.14=oddsratio.wald(X[,,3])$measure
+s15.24=oddsratio.wald(X[,,4])$measure
+s25.34=oddsratio.wald(X[,,5])$measure
+s35.44=oddsratio.wald(X[,,6])$measure
+s45=oddsratio.wald(X[,,7])$measure</code></pre>
+<pre class="r"><code>never[c(0,2),]</code></pre>
+<pre><code>##  estimate     lower     upper 
+## 1.1043988 0.4627101 2.6359850</code></pre>
+<pre class="r"><code>former[c(0,2),]</code></pre>
+<pre><code>##  estimate     lower     upper 
+## 2.1777778 0.8057663 5.8859697</code></pre>
+<pre class="r"><code>s1.14[c(0,2),]</code></pre>
+<pre><code>##  estimate     lower     upper 
+## 1.0075758 0.3988197 2.5455337</code></pre>
+<pre class="r"><code>s15.24[c(0,2),]</code></pre>
+<pre><code>## estimate    lower    upper 
+## 1.737374 1.056532 2.856957</code></pre>
+<pre class="r"><code>s25.34[c(0,2),]</code></pre>
+<pre><code>##  estimate     lower     upper 
+## 1.5583333 0.8152665 2.9786611</code></pre>
+<pre class="r"><code>s35.44[c(0,2),]</code></pre>
+<pre><code>## estimate    lower    upper 
+## 1.186364 0.611870 2.300258</code></pre>
+<pre class="r"><code>s45[c(0,2),]</code></pre>
+<pre><code>##  estimate     lower     upper 
+## 0.8823529 0.3838088 2.0284754</code></pre>
+</div>
+<div id="part-c-1" class="section level2">
+<h2>Part c</h2>
+<pre class="r"><code>mantelhaen.test(X)</code></pre>
+<pre><code>## 
+##  Mantel-Haenszel chi-squared test with continuity correction
+## 
+## data:  X
+## Mantel-Haenszel X-squared = 5.0709, df = 1, p-value = 0.02433
+## alternative hypothesis: true common odds ratio is not equal to 1
+## 95 percent confidence interval:
+##  1.050526 1.800678
+## sample estimates:
+## common odds ratio 
+##          1.375376</code></pre>
+<p><span class="math inline">\(H_0: OR =1\)</span></p>
+<p><span class="math inline">\(H_A: OR \neq 1\)</span></p>
+<p>Since pvalue &lt; .05 reject <span class="math inline">\(H_0\)</span></p>
+<p>There is evidence that smoking status may confound the association between coffee drinking and MI.</p>
+</div>
 </div>
 
 
