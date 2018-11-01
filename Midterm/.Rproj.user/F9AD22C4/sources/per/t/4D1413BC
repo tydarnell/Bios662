@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1541099626475.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3133473273",
+    "id" : "4D1413BC",
+    "lastKnownWriteTime" : 1540218775,
+    "last_content_update" : 1540218775,
+    "path" : "~/Bios611/project2/cleandata.R",
+    "project_path" : null,
+    "properties" : {
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

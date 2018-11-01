@@ -1,0 +1,6 @@
+"0","nam=c(""id"",""ci_pb"",""ei_pd"",""ag"")"
+"0","cc=fread(""Midterm_CC.dat"")"
+"0","names(cc)=nam"
+"0","cc$ci_pb=factor(cc$ci_pb)"
+"0","cc$ei_pd=factor(cc$ei_pd)"
+"0","cc$ag=factor(cc$ag)"

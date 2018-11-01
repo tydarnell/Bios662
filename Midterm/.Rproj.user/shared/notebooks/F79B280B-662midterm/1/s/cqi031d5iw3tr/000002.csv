@@ -1,0 +1,2 @@
+"0","ga_estint=cut(midt$ga_est,c(0,37,40,Inf),right=F,labels=c(""low"",""med"",""high""))"
+"0","ga_ultraint=cut(midt$ga_ultra,c(0,37,40,Inf),right=F,labels=c(""low"",""med"",""high""))"

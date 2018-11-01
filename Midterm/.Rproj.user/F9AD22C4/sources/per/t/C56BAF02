@@ -1,0 +1,24 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1540393873121.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4205525694",
+    "id" : "C56BAF02",
+    "lastKnownWriteTime" : 1541103507,
+    "last_content_update" : 1541103507778,
+    "path" : "~/Bios662/Midterm/662midterm.Rmd",
+    "project_path" : "662midterm.Rmd",
+    "properties" : {
+        "cursorPosition" : "445,388",
+        "last_setup_crc32" : "A1DA1E6E1cdd4216",
+        "scrollLine" : "437",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}
