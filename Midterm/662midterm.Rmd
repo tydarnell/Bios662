@@ -2,7 +2,7 @@
 title: "662Midterm"
 author: "Ty Darnell"
 date: "October 24, 2018"
-output: html_document
+output: pdf_document
 ---
 
 ```{r setup, include=FALSE}

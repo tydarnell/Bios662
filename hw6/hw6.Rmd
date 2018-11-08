@@ -1,0 +1,24 @@
+---
+title: "hw6"
+author: "Ty Darnell"
+date: "November 8, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,warning = F, message = F)
+library(tidyverse)
+library(knitr)
+library(data.table)
+column_names=c("id","group","trg")
+column_classes=c("character","factor","integer")
+trgdat=fread("HW6_TRG.txt",colClasses = column_classes)
+setnames(trgdat,column_names)
+```
+
+#Problem 1
+
+```{r}
+
+```
+

@@ -1,0 +1,29 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1541684026237.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "15C26385",
+    "lastKnownWriteTime" : 7813590796663464571,
+    "last_content_update" : 1541684026237,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "67219BC",
+        "caption" : "trgdat",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=trgdat&cache_key=67219BC",
+        "displayedObservations" : 46,
+        "environment" : "",
+        "object" : "trgdat",
+        "preview" : 0,
+        "totalObservations" : 46,
+        "variables" : 3
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}
