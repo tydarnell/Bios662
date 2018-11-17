@@ -1,0 +1,24 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1542480773281.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2222980945",
+    "id" : "CF5B120C",
+    "lastKnownWriteTime" : 1542489092,
+    "last_content_update" : 1542489092855,
+    "path" : "~/Bios662/hw7/hw7.Rmd",
+    "project_path" : "hw7.Rmd",
+    "properties" : {
+        "cursorPosition" : "109,175",
+        "last_setup_crc32" : "FFDC41EE84ff08ae",
+        "scrollLine" : "98",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}
