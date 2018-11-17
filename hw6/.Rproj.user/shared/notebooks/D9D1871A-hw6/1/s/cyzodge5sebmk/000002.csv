@@ -1,0 +1,2 @@
+"0","av <- aov(trgdat$trg~trgdat$group)"
+"0","kable(anova(av))"

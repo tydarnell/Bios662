@@ -1,0 +1,1 @@
+"0","trgdat2=trgdat%>%mutate(group2=factor(as.integer(group!=""1"")))"

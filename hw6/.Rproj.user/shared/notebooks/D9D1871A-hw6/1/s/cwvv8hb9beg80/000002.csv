@@ -1,0 +1,6 @@
+"0","pairwise=pairw.anova(trgdat$trg,trgdat$group,conf.level=.95,method=""scheffe"")"
+"0","(critfval=qf(.95,4,41))"
+"1","[1]"
+"1"," 2.599969"
+"1","
+"
