@@ -376,33 +376,47 @@ autoplot(fit,xlab=&quot;t&quot;,ylab=&quot;S(t)&quot;,main = &quot;Kaplan-Meier 
 <div id="part-c-1" class="section level2">
 <h2>Part c</h2>
 <p>Using the proportional hazards model to test whether the distribution of survival times is the same in the two groups.</p>
+<p><span class="math inline">\(\beta\)</span>=-0.6972</p>
 <p><span class="math inline">\(\alpha=.05\)</span></p>
 <p><span class="math inline">\(H_0: \beta =0\)</span></p>
 <p><span class="math inline">\(H_A: \beta \neq 0\)</span></p>
-<pre class="r"><code> summary(coxph(Surv(timedeath, death)~group,data=sur2))</code></pre>
+<pre class="r"><code> phaz=coxph(Surv(timedeath, death)~group,data=sur2)
+phaz</code></pre>
 <pre><code>## Call:
 ## coxph(formula = Surv(timedeath, death) ~ group, data = sur2)
 ## 
-##   n= 110, number of events= 72 
+##          coef exp(coef) se(coef)      z       p
+## group -0.6972    0.4980   0.2394 -2.913 0.00358
 ## 
-##          coef exp(coef) se(coef)      z Pr(&gt;|z|)   
-## group -0.6972    0.4980   0.2394 -2.913  0.00358 **
-## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-## 
-##       exp(coef) exp(-coef) lower .95 upper .95
-## group     0.498      2.008    0.3115    0.7961
-## 
-## Concordance= 0.588  (se = 0.03 )
-## Rsquare= 0.075   (max possible= 0.996 )
-## Likelihood ratio test= 8.54  on 1 df,   p=0.003
-## Wald test            = 8.48  on 1 df,   p=0.004
-## Score (logrank) test = 8.81  on 1 df,   p=0.003</code></pre>
+## Likelihood ratio test=8.54  on 1 df, p=0.003481
+## n= 110, number of events= 72</code></pre>
 <p>pvalue=.00358&lt;<span class="math inline">\(\alpha\)</span></p>
 <p>Reject <span class="math inline">\(H_0\)</span> conclude the <span class="math inline">\(\beta\)</span> coefficient is significantly different from 0. Thus the distribution of survival times is not the same in the two groups.</p>
 </div>
 <div id="part-d" class="section level2">
 <h2>Part d</h2>
+<pre class="r"><code>conf=exp(confint(phaz))</code></pre>
+<p>Estimate for hazard ratio for group 2 relative to group 1= 0.4980</p>
+<p>95% CI for the true hazards ratio: 0.3114788, 0.7960911</p>
+</div>
+<div id="part-e" class="section level2">
+<h2>Part e</h2>
+<pre class="r"><code> phaz1=coxph(Surv(timedeath, death)~group+age,data=sur2)
+phaz1</code></pre>
+<pre><code>## Call:
+## coxph(formula = Surv(timedeath, death) ~ group + age, data = sur2)
+## 
+##           coef exp(coef) se(coef)      z       p
+## group -0.72074   0.48639  0.24017 -3.001 0.00269
+## age    0.04922   1.05045  0.02320  2.122 0.03387
+## 
+## Likelihood ratio test=13.07  on 2 df, p=0.001451
+## n= 110, number of events= 72</code></pre>
+<p>Adding age to the proportional hazards model</p>
+<p>p-value for age=0.03387</p>
+<p>since p-value &lt; <span class="math inline">\(\alpha\)</span>, age does have a signifcant effect on survival.</p>
+<p><span class="math inline">\(\beta\)</span> for group adding in age= 0.48639</p>
+<p>Adjusting for age does not make a substantial difference to the estimate of the treatment effect since the group coefiecient does not change substantially.</p>
 </div>
 </div>
 

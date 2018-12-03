@@ -179,6 +179,8 @@ Reject $H_0$ since p-value< $\alpha$, thus $S_1(t)\neq S_2(t)$ for at least one 
 
 Using the proportional hazards model to test whether the distribution of survival times is the same in the two groups.
 
+$\beta$=-0.6972
+
 $\alpha=.05$
 
 $H_0: \beta =0$
@@ -187,7 +189,8 @@ $H_A: \beta \neq 0$
 
 
 ```{r}
- summary(coxph(Surv(timedeath, death)~group,data=sur2))
+ phaz=coxph(Surv(timedeath, death)~group,data=sur2)
+phaz
 ```
 
 pvalue=.00358<$\alpha$
@@ -197,6 +200,34 @@ Reject $H_0$ conclude the $\beta$ coefficient is significantly different from 0.
 ## Part d
 
 ```{r}
+conf=exp(confint(phaz))
+```
 
+
+Estimate for hazard ratio for group 2 relative to group 1= 0.4980
+
+95% CI for the true hazards ratio: `r conf`
+
+## Part e
+
+```{r}
+ phaz1=coxph(Surv(timedeath, death)~group+age,data=sur2)
+phaz1
+```
+
+Adding age to the proportional hazards model
+
+p-value for age=0.03387
+
+since p-value < $\alpha$, age does have a signifcant effect on survival.
+
+$\beta$ for group adding in age= 0.48639
+
+Adjusting for age does not make a substantial difference to the estimate of the treatment effect since the group coefiecient does not change substantially.
+
+## Part f
+
+```{r}
+sur2%>%filter(group==1)
 ```
 
