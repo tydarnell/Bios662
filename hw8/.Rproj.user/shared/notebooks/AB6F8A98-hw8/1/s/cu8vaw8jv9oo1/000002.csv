@@ -1,0 +1,6 @@
+"0","dat2a=dat%>% select(status,total_ops,halothane=hops,cyclopropane=cops)"
+"0","dat2b=dat %>% select(status,total_deaths,halothane=hdeaths,cyclopropane=cdeaths)"
+"0","dat2a%<>% melt(value.name = ""ops"",id.vars=c(""status"",""total_ops""),measure.vars=c(""halothane"",""cyclopropane""))"
+"0","dat2b%<>% melt(value.name = ""deaths"",id.vars=c(""status"",""total_deaths""),measure.vars=c(""halothane"",""cyclopropane""))"
+"0","dat2= left_join(dat2b,dat2a)"
+"0","dat2=select(dat2,status,variable,everything())"

@@ -1,0 +1,2 @@
+"0","dat2%<>% mutate(rates=100000*deaths/ops)"
+"0","dat2%>%group_by(status)%>% summarize(crude=weighted.mean(rates,ops))"

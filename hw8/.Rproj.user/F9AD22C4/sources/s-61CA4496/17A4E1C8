@@ -1,0 +1,24 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1543691920238.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "17A4E1C8",
+    "lastKnownWriteTime" : 1543843074,
+    "last_content_update" : 1543843074566,
+    "path" : "~/Bios662/hw8/hw8.Rmd",
+    "project_path" : "hw8.Rmd",
+    "properties" : {
+        "cursorPosition" : "144,0",
+        "last_setup_crc32" : "",
+        "scrollLine" : "127",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}
