@@ -10,9 +10,11 @@ library(tidyverse)
 library(knitr)
 library(data.table)
 library(magrittr)
+library(survival)
+library(ggfortify)
 library(reshape2)
 knitr::opts_chunk$set(echo = TRUE,warning=F, message=F)
-options(scipen=999)
+#options(scipen=999)
 ```
 
 # Problem 1
@@ -145,8 +147,56 @@ Reject $H_0$ conclude $\pi_{halothane}/\pi_{overall}\neq 1$
 sur=fread("HW8_SURV.txt")
 cnames2=c("id","timedeath","death","age","group")
 colnames(sur)=cnames2
-sur$group=factor(sur$group)
-sur$death=factor(sur$death)
- 
+```
+
+```{r}
+sur2=sur%>%arrange(timedeath)
+fit <- survfit(Surv(timedeath, death)~group,data=sur2)
+autoplot(fit,xlab="t",ylab="S(t)",main = "Kaplan-Meier Curves for Placebo and Treatment Groups")
+summary(fit)
+```
+
+## Part b
+
+Log rank test to test whether the distribution of survival times
+is the same in the two groups.
+
+$\alpha=.05$
+
+$H_0: S_1(t)=S_2(t) \ \forall t$
+
+$H_A: S_1(t)\neq S_2(t)$ for at least one t
+
+```{r}
+survdiff(Surv(timedeath, death)~group,data=sur2)
+```
+
+p-value=.003<$\alpha$
+
+Reject $H_0$ since p-value< $\alpha$, thus $S_1(t)\neq S_2(t)$ for at least one t
+
+## Part c
+
+Using the proportional hazards model to test whether the distribution of survival times is the same in the two groups.
+
+$\alpha=.05$
+
+$H_0: \beta =0$
+
+$H_A: \beta \neq 0$
+
+
+```{r}
+ summary(coxph(Surv(timedeath, death)~group,data=sur2))
+```
+
+pvalue=.00358<$\alpha$
+
+Reject $H_0$ conclude the $\beta$ coefficient is significantly different from 0. Thus the distribution of survival times is not the same in the two groups.
+
+## Part d
+
+```{r}
+
 ```
 

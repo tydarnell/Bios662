@@ -1,0 +1,29 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1543870485824.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "AB912498",
+    "lastKnownWriteTime" : 7308604914264011873,
+    "last_content_update" : 1543870485824,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "7EDC2489",
+        "caption" : "sur2",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=sur2&cache_key=7EDC2489",
+        "displayedObservations" : 110,
+        "environment" : "",
+        "object" : "sur2",
+        "preview" : 0,
+        "totalObservations" : 110,
+        "variables" : 5
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}

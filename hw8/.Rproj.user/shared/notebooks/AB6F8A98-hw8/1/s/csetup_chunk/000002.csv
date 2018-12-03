@@ -43,6 +43,8 @@ Attaching package: ‘magrittr’
     extract
 
 "
+"0","library(survival)"
+"0","library(ggfortify)"
 "0","library(reshape2)"
 "2","
 Attaching package: ‘reshape2’
@@ -59,4 +61,4 @@ Attaching package: ‘reshape2’
 
 "
 "0","knitr::opts_chunk$set(echo = TRUE,warning=F, message=F)"
-"0","options(scipen=999)"
+"0","#options(scipen=999)"

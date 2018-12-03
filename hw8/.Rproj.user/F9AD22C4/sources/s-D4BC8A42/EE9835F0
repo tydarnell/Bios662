@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1543869497421.000,
+    "dirty" : true,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "EE9835F0",
+    "lastKnownWriteTime" : 1543871930,
+    "last_content_update" : 1543873792923,
+    "path" : "~/Bios662/hw8/survivial.R",
+    "project_path" : "survivial.R",
+    "properties" : {
+        "cursorPosition" : "13,0",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
