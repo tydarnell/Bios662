@@ -227,7 +227,11 @@ Adjusting for age does not make a substantial difference to the estimate of the 
 
 ## Part f
 
-```{r}
+Median survival time for placebo group=197
 
+S(t)=.5 at t=197
+
+```{r}
+sur2%>%filter(group==1)%>%summarize(median=median(timedeath))
 ```
 

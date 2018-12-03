@@ -9,3 +9,6 @@ summary(fit)
 fit <- survfit(Surv(timedeath, death)~1,type="kaplan-meier" ,conf.type="plain",data=sur2)
 plot(fit,xlab="t",ylab="S(t)")
 summary(fit)
+
+
+survdiff(Surv(timedeath, death)~group,data=sur2)

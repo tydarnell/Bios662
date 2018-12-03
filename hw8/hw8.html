@@ -418,6 +418,14 @@ phaz1</code></pre>
 <p><span class="math inline">\(\beta\)</span> for group adding in age= 0.48639</p>
 <p>Adjusting for age does not make a substantial difference to the estimate of the treatment effect since the group coefiecient does not change substantially.</p>
 </div>
+<div id="part-f" class="section level2">
+<h2>Part f</h2>
+<p>Median survival time for placebo group=197</p>
+<p>S(t)=.5 at t=197</p>
+<pre class="r"><code>sur2%&gt;%filter(group==1)%&gt;%summarize(median=median(timedeath))</code></pre>
+<pre><code>##   median
+## 1    197</code></pre>
+</div>
 </div>
 
 
