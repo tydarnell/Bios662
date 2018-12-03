@@ -142,6 +142,11 @@ Reject $H_0$ conclude $\pi_{halothane}/\pi_{overall}\neq 1$
 ## Part a
 
 ```{r}
-
+sur=fread("HW8_SURV.txt")
+cnames2=c("id","timedeath","death","age","group")
+colnames(sur)=cnames2
+sur$group=factor(sur$group)
+sur$death=factor(sur$death)
+ 
 ```
 

@@ -1,0 +1,6 @@
+"0","sur=fread(""HW8_SURV.txt"")"
+"0","cnames2=c(""id"",""timedeath"",""death"",""age"",""group"")"
+"0","colnames(sur)=cnames2"
+"0","sur$group=factor(sur$group)"
+"0","sur$death=factor(sur$death)"
+"0"," "
